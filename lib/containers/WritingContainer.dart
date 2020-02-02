@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ggj_repair/models/scene_model.dart';
+import 'package:provider/provider.dart';
 
 class WritingContainer extends StatefulWidget {
 	@override
@@ -9,7 +11,11 @@ class WritingContainerState extends State<WritingContainer> {
 	Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    return Column(
+    return Consumer<SceneModel>(
+      builder: (context, scene, child) {
+        return child;
+      }, 
+      child: Column(
         children: <Widget>[
           Expanded(
             child: Container()
@@ -34,6 +40,7 @@ class WritingContainerState extends State<WritingContainer> {
             )
           )
         ]
+      )
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/tap_model.dart';
+import 'package:ggj_repair/models/scene_model.dart';
 import 'package:provider/provider.dart';
 
 class InterfaceContainer extends StatefulWidget {
@@ -17,7 +17,7 @@ class InterfaceContainerState extends State<InterfaceContainer> {
         Expanded(
           child: GestureDetector(
             onTap: () {
-              Provider.of<TapModel>(context).pageTapped();
+              Provider.of<SceneModel>(context, listen: false).next();
             },
           )
         ),

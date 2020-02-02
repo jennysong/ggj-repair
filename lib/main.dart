@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ggj_repair/models/scene_model.dart';
 import 'package:provider/provider.dart';
 import 'package:ggj_repair/app.dart';
 import 'package:ggj_repair/models/tap_model.dart';
@@ -10,17 +11,13 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) {
-            var gameModel = GameModel();
-            gameModel.setScene('testing');
-            return gameModel;
-          }
+          create: (context) => GameModel()
         ),
         ChangeNotifierProvider(
           create: (context) => CharacterModel()
         ),
         ChangeNotifierProvider(
-          create: (context) => TapModel()
+          create: (context) => SceneModel()
         )
       ],
       child: MyApp(title: 'GGJ_REPAIR')
