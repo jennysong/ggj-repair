@@ -9,8 +9,7 @@ class InterfaceContainer extends StatefulWidget {
 
 class InterfaceContainerState extends State<InterfaceContainer> {
 	bool expandBox = false;
-  bool quickAnimation = false;
-	String selectedBox = 'itemBox';
+  bool itemBoxOnTop = true;
 	@override
 	Widget build(BuildContext context) {
 		return Column(
@@ -31,63 +30,64 @@ class InterfaceContainerState extends State<InterfaceContainer> {
             ]
           )
         ),
-				Row(
-					children: [
-						GestureDetector( //itemBox
-							onTap: () {
-								setState((){
-									if (!expandBox) {
-										expandBox = true;
-                    quickAnimation = true;
-										selectedBox = 'itemBox';
-									}	else if (selectedBox != 'itemBox') {
-										selectedBox = 'itemBox';
-                    quickAnimation = false;
-									} else {
-										expandBox = false;
-                    quickAnimation = false;
-									}
-								});
-							},
-							child: bottomTabContainer('itemBox')
-						),
-						GestureDetector( //mapBox
-							onTap: () {
-								setState((){
-									if (!expandBox) {
-										expandBox = true;
-										selectedBox = 'mapBox';
-                    quickAnimation = true;
-									}	else if (selectedBox != 'mapBox') {
-										selectedBox = 'mapBox';
-                    quickAnimation = false;
-									} else {
-										expandBox = false;
-                    quickAnimation = false;
-									}
-								});
-							},
-							child: bottomTabContainer('mapBox')
-						),
-					]
-				),
-				AnimatedContainer(
-					color: selectedBox=='itemBox'? Colors.teal[900] : Colors.indigo[900],
-					height: expandBox? 300:0,
-					duration: quickAnimation? Duration(milliseconds:400) : Duration(milliseconds:100)
-				)
+				Row (
+          children: <Widget>[
+            GestureDetector( //itemBox
+              onTap: () {
+                setState((){
+                  expandBox = !expandBox? true : !itemBoxOnTop? true : false;
+                  itemBoxOnTop = true;
+                });
+              },
+              child: bottomTabContainer('itemBox')
+            ),
+            GestureDetector( //MapBox
+              onTap: () {
+                setState((){
+                  expandBox = !expandBox? true : itemBoxOnTop? true : false;
+                  itemBoxOnTop = false;
+                });
+              },
+              child: bottomTabContainer('mapBox')
+            ),
+          ],
+        ),
+        IndexedStack(
+          index: itemBoxOnTop? 0:1,
+          children: <Widget>[
+            AnimatedContainer(
+              color: Color.fromRGBO(63, 152, 172, 1),
+              height: expandBox? 270:0,
+              duration: Duration(milliseconds:400)
+            ),
+            AnimatedContainer(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(169, 134, 95, 1),
+                image: DecorationImage(
+                  image: AssetImage('lib/assets/backgrounds/Map.jpg'),
+                  fit: BoxFit.contain
+                )
+              ),
+              height: expandBox? 270:0,
+              duration: Duration(milliseconds:400)
+            )
+          ]
+        )
       ]
     );
-	}
+  }
 }
 
 bottomTabContainer(String boxType) => Container(
-  alignment: Alignment.topRight,
   height: 50,
   width: 100,
   padding: EdgeInsets.all(30),
   decoration: new BoxDecoration(
-    color: boxType == 'itemBox'? Colors.teal[900] : Colors.indigo[900],
+    color: boxType == 'itemBox'? Color.fromRGBO(63, 152, 172, 1) : Color.fromRGBO(169, 134, 95, 1),
+    image: DecorationImage(
+      image: boxType == 'itemBox'? AssetImage('lib/assets/Bag.png') : AssetImage('lib/assets/House.png'),
+      fit: BoxFit.contain
+    ),
     boxShadow: [
       BoxShadow(
         color: Colors.black,
