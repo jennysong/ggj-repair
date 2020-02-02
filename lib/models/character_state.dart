@@ -2,17 +2,19 @@ class CharacterState {
   int health;
   int suspicion;
   int money;
+  bool show;
 
   CharacterState({
     this.health,
     this.suspicion,
-    this.money
+    this.money,
+    this.show
   });
 
-  factory CharacterState.init() => CharacterState(health: 90, suspicion: 0, money: 50);
+  factory CharacterState.init() => CharacterState(health: 100, suspicion: 0, money: 50);
 
   @override
   String toString() {
-    return 'health: $health, suspicion: $suspicion, money: $money';
+    return 'health: $health, suspicion: $suspicion, money: $money, show: $show';
   }
 }

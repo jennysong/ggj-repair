@@ -14,23 +14,89 @@ class MyApp extends StatelessWidget {
     return StoreProvider<CharacterState>(
       store: store,
       child: MaterialApp(
+        theme: ThemeData.dark(),
+        darkTheme: ThemeData.dark(),
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Hello World!')
+            title: header
           ),
-          body: BottomBox()
+          body: Stack(
+            children: <Widget>[
+              BackgroundContainer(), // container1:background
+              PictureContainer(), // container2:picture 
+              WritingContainer(), // container3:writing
+              InterfaceContainer(), // container4:interface
+            ]
+          )
         )
       )
     );
   }
 }
 
-class BottomBox extends StatefulWidget {
-	@override
-	BottomBoxState createState() => BottomBoxState();
-}
+var header = new StoreConnector<CharacterState, CharacterState> (
+  converter: (store) => store.state,
+  builder: (context, state) {
+    return new Text('Health: ${state.health}, suspicion: ${state.suspicion}, money: ${state.money}');
+  }
+);
 
-class BottomBoxState extends State<BottomBox> {
+
+/////////////////
+class BackgroundContainer extends StatefulWidget {
+	@override
+	BackgroundContainerState createState() => BackgroundContainerState();
+}
+class BackgroundContainerState extends State<BackgroundContainer> {
+  @override
+	Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black
+    );
+  }
+}
+/////////////////
+/////////////////
+class PictureContainer extends StatefulWidget {
+	@override
+	PictureContainerState createState() => PictureContainerState();
+}
+class PictureContainerState extends State<PictureContainer> {
+  @override
+	Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('lib/assets/backgrounds/Forest_Scene1.jpg'),
+          fit: BoxFit.cover
+        )
+      )
+    );
+  }
+}
+/////////////////
+/////////////////
+class WritingContainer extends StatefulWidget {
+	@override
+	WritingContainerState createState() => WritingContainerState();
+}
+class WritingContainerState extends State<WritingContainer> {
+  @override
+	Widget build(BuildContext context) {
+    return Container(
+      color: Color.fromRGBO(255, 255, 255, 0.6),
+      height: 350,
+      alignment: Alignment.bottomCenter
+    );
+  }
+}
+/////////////////
+/////////////////
+class InterfaceContainer extends StatefulWidget {
+	@override
+	InterfaceContainerState createState() => InterfaceContainerState();
+}  
+class InterfaceContainerState extends State<InterfaceContainer> {
 	bool expandBox = false;
 	String selectedBox = 'itemBox';
 	@override
@@ -40,18 +106,9 @@ class BottomBoxState extends State<BottomBox> {
         Expanded(
           child: Column(
             children: [
-              Container(
-                child: new StoreConnector<CharacterState, CharacterState> (
-                  converter: (store) => store.state,
-                  builder: (context, state) {
-                    return new Text('Health: ${state.health}, suspicion: ${state.suspicion}, money: ${state.money}');
-                  }
-                )
-              ),
               GestureDetector(
                 onTap: () {
                   StoreProvider.of<CharacterState>(context).dispatch(IncrementHealth(10));
-                  debugPrint('hi');
                 },
                 child: Container(
                   height: 50,
@@ -78,7 +135,7 @@ class BottomBoxState extends State<BottomBox> {
 								});
 							},
 							child: Container(
-								color: Colors.yellow,
+								color: Colors.teal[900],
 								alignment: Alignment.topRight,
 								height: 50,
 								width: 100,
@@ -98,7 +155,7 @@ class BottomBoxState extends State<BottomBox> {
 								});
 							},
 							child: Container(
-								color: Colors.orange,
+								color: Colors.indigo[900],
 								alignment: Alignment.topRight,
 								height: 50,
 								width: 100,
@@ -107,8 +164,8 @@ class BottomBoxState extends State<BottomBox> {
 					]
 				),
 				AnimatedContainer(
-					color: selectedBox=='itemBox'? Colors.yellow : Colors.orange,
-					height: expandBox? 300:10,
+					color: selectedBox=='itemBox'? Colors.teal[900] : Colors.indigo[900],
+					height: expandBox? 300:0,
 					duration: expandBox? Duration(milliseconds:400) : Duration(milliseconds:100)
 				)
       ]
