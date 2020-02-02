@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ggj_repair/models/character_model.dart';
 import 'package:provider/provider.dart';
 
-
 class HeaderStatusContainer extends StatelessWidget {
   Widget imageAsset(String imgUrl) => Image(
     image: AssetImage(imgUrl),

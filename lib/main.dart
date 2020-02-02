@@ -9,7 +9,11 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => GameModel()
+          create: (context) {
+            var gameModel = GameModel();
+            gameModel.setScene('testing');
+            return gameModel;
+          }
         ),
         ChangeNotifierProvider(
           create: (context) => CharacterModel()

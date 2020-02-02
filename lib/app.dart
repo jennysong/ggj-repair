@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ggj_repair/containers/HeaderStatusContainer.dart';
-import 'package:ggj_repair/containers/BackgroundContainer.dart';
-import 'package:ggj_repair/containers/PictureContainer.dart';
-import 'package:ggj_repair/containers/WritingContainer.dart';
 import 'package:ggj_repair/containers/InterfaceContainer.dart';
+import 'package:ggj_repair/containers/SceneContainer.dart';
+import 'package:provider/provider.dart';
+
+import 'models/game_model.dart';
 
 class MyApp extends StatelessWidget {
 	final String title;
@@ -20,9 +21,12 @@ class MyApp extends StatelessWidget {
         ),
         body: Stack(
           children: <Widget>[
-            BackgroundContainer(), // container1:background
-            PictureContainer(), // container2:picture 
-            WritingContainer(), // container3:writing
+            Consumer<GameModel>(
+              builder: (context, gameModel, child) =>
+                gameModel.currentScene != null ?
+                  SceneContainer(scene: gameModel.currentScene) :
+                  Container()
+            ),
             InterfaceContainer(), // container4:interface
           ]
         )
