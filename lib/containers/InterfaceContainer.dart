@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:ggj_repair/models/models.dart';
-import 'package:ggj_repair/actions/actions.dart';
+import 'package:ggj_repair/models/character_model.dart';
+import 'package:provider/provider.dart';
 
 class InterfaceContainer extends StatefulWidget {
 	@override
@@ -21,7 +20,7 @@ class InterfaceContainerState extends State<InterfaceContainer> {
             children: [
               GestureDetector(
                 onTap: () {
-                  StoreProvider.of<CharacterState>(context).dispatch(IncrementHealth(10));
+                  Provider.of<CharacterModel>(context).increaseHealth(10);
                 },
                 child: Container(
                   height: 50,
