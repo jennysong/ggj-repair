@@ -11,7 +11,7 @@ class CharacterState {
     this.show
   });
 
-  factory CharacterState.init() => CharacterState(health: 100, suspicion: 0, money: 50);
+  factory CharacterState.init() => CharacterState(health: 100, suspicion: 0, money: 500);
 
   @override
   String toString() {
