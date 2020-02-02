@@ -1,0 +1,112 @@
+events[]
+  type = Dialog
+  backgroundId n = n
+  backgroundColor = white
+  charactorPositions[]
+    charactorId = player_1
+    direction = right
+    position = left
+  conversations[]
+    charactorId = player_1
+    emotion = normal
+    messages[]
+      text = Hello.
+      conditions[]
+    messages[]
+      text = World.
+      conditions[]
+
+events[]
+  type = Monolog
+  backgroundId n = n
+  backgroundColor = black
+  messages[]
+    text = Hello
+    conditions[]
+  messages[]
+    text = World
+    conditions[]
+
+events[]
+  type = GetItem
+  visible b = true
+  purchased b = false
+  itemId = spoon
+
+events[]
+  type = GetItem
+  visible b = true
+  purchased b = true
+  itemId = spoon
+
+events[]
+  type = IncreaseHealth
+  visible b = true
+  amount n = 1
+
+events[]
+  type = IncreaseCurrency
+  visible b = true
+  currencyId = dollar
+  amount n = 1
+
+events[]
+  type = IncreaseHealth
+  visible b = false
+  amount n = 2
+
+events[]
+  type = IncreaseCurrency
+  visible b = false
+  currencyId = dollar
+  amount n = 2
+
+events[]
+  type = DecreaseHealth
+  visible b = true
+  amount n = 1
+
+events[]
+  type = DecreaseCurrency
+  visible b = true
+  currencyId = dollar
+  amount n = 1
+
+events[]
+  type = DecreaseHealth
+  visible b = false
+  amount n = 1
+
+events[]
+  type = DecreaseCurrency
+  visible b = false
+  currencyId = dollar
+  amount n = 1
+
+events[]
+  type = SingleSelect
+  choices[]
+    name = Buy Health $1
+    events[]
+      type = IncreaseHealth
+      visible b = true
+      amount n = 1
+
+    events[]
+      type = DecreaseCurrency
+      visible b = false
+      currencyId = dollar
+      amount n = 1
+    conditions[]
+
+  choices[]
+    name = Do nothing
+    events[]
+      type = Null
+    conditions[]
+
+events[]
+  type = Navigate
+  sceneId n = n
+  eventIndex n = 0
+

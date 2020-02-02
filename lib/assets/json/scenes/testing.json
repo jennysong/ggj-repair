@@ -116,7 +116,8 @@
               "currencyId": "dollar",
               "amount": 1
             }
-          ]
+          ],
+          "conditions": []
         },
         {
           "name": "Do nothing",
@@ -124,7 +125,8 @@
             {
               "type": "Null"
             }
-          ]
+          ],
+          "conditions": []
         }
       ]
     },
