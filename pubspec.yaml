@@ -49,6 +49,7 @@ flutter:
    - lib/assets/backgrounds/Forest_Scene1.jpg
    - lib/assets/backgrounds/Forest_Scene2.jpg
    - lib/assets/backgrounds/Forest_Scene3.jpg
+   - lib/assets/backgrounds/Map.jpg
    - lib/assets/heart.png
    - lib/assets/warning.png
    - lib/assets/coins.png
