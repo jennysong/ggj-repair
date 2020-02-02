@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/character_model.dart';
+import 'package:ggj_repair/models/tap_model.dart';
 import 'package:provider/provider.dart';
 
 class InterfaceContainer extends StatefulWidget {
@@ -15,19 +15,10 @@ class InterfaceContainerState extends State<InterfaceContainer> {
 		return Column(
       children: [
         Expanded(
-          child: Column(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Provider.of<CharacterModel>(context).increaseHealth(10);
-                },
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.transparent
-                )
-              )
-            ]
+          child: GestureDetector(
+            onTap: () {
+              Provider.of<TapModel>(context).pageTapped();
+            },
           )
         ),
 				Row (
