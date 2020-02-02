@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: header
+          title: HeaderStatusContainer()
         ),
         body: Stack(
           children: <Widget>[
