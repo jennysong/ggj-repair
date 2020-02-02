@@ -11,28 +11,54 @@ abstract class BaseEvent {}
 class DialogEvent implements BaseEvent {
   DialogEvent({
     @required this.backgroundId,
-    @required this.backgroundColor,
-    @required this.charactorPositions,
-    @required this.conversations
-  });
+    @required backgroundColor,
+    @required charactorPositions,
+    @required conversations
+  }) {
 
+    this.backgroundColor = Colors.black;
 
-  final String backgroundId;
-  final Colors backgroundColor;
-  final List<CharactorPosition> charactorPositions;
-  final List<Conversation> conversations;
+    this.charactorPositions = charactorPositions.map<CharactorPosition>((attrs) =>
+      new CharactorPosition(
+        charactorId: attrs['charactor_id'],
+        direction: attrs['direction'],
+        position: attrs['position']
+      )
+    ).toList();
+    
+    this.conversations = conversations.map<Conversation>((attrs) =>
+      new Conversation(
+        charactorId: attrs['charactorId'],
+        emotion: attrs['emotion'],
+        messages: attrs['messages'],
+      )
+    ).toList();
+  }
+
+  String backgroundId;
+  Color backgroundColor;
+  List<CharactorPosition> charactorPositions;
+  List<Conversation> conversations;
 }
 
 class MonologEvent implements BaseEvent {
   MonologEvent({
     this.backgroundId,
-    this.backgroundColor,
-    @required this.messages
-  });
+    backgroundColor,
+    @required messages
+  }) {
+    this.backgroundColor = Colors.black;
+    this.messages = messages.map<Message>((attrs) =>
+      new Message(
+        text: attrs['text'],
+        conditions: attrs['conditions'].cast<String>(),
+      )
+    ).toList();
+  }
   
-  final String backgroundId;
-  final Colors backgroundColor;
-  final List<Message> messages;
+  String backgroundId;
+  Color backgroundColor;
+  List<Message> messages;
 }
 
 class GetItemEvent implements BaseEvent {
@@ -42,9 +68,9 @@ class GetItemEvent implements BaseEvent {
     @required this.itemId,
   });
   
-  final bool visible;
-  final bool purchased;
-  final String itemId;
+  bool visible;
+  bool purchased;
+  String itemId;
 }
 
 class IncreaseHealthEvent implements BaseEvent {
@@ -53,8 +79,8 @@ class IncreaseHealthEvent implements BaseEvent {
     @required this.amount
   });
 
-  final bool visible;
-  final int amount;
+  bool visible;
+  int amount;
 }
 
 class IncreaseCurrencyEvent implements BaseEvent {
@@ -64,9 +90,9 @@ class IncreaseCurrencyEvent implements BaseEvent {
     @required this.amount
   });
   
-  final bool visible;
-  final String currencyId;
-  final int amount;
+  bool visible;
+  String currencyId;
+  int amount;
 }
 
 class DecreaseHealthEvent implements BaseEvent {
@@ -75,8 +101,8 @@ class DecreaseHealthEvent implements BaseEvent {
     @required this.amount
   });
 
-  final bool visible;
-  final int amount;
+  bool visible;
+  int amount;
 }
 
 class DecreaseCurrencyEvent implements BaseEvent {
@@ -86,17 +112,25 @@ class DecreaseCurrencyEvent implements BaseEvent {
     @required this.amount
   });
   
-  final bool visible;
-  final String currencyId;
-  final int amount;
+  bool visible;
+  String currencyId;
+  int amount;
 }
 
 class SingleSelectEvent implements BaseEvent {
   SingleSelectEvent({
-    @required this.choices
-  });
+    @required choices
+  }) {
+    this.choices = choices.map<Choice>((attrs) =>
+      new Choice(
+        name: attrs['name'],
+        events: attrs['events'],
+        conditions: attrs['conditions'].cast<String>(),
+      )
+    ).toList();
+  }
   
-  final List<Choice> choices;
+  List<Choice> choices;
 }
 
 class NavigateEvent implements BaseEvent {
@@ -105,8 +139,8 @@ class NavigateEvent implements BaseEvent {
     this.eventIndex
   });
   
-  final String sceneId;
-  final int eventIndex;
+  String sceneId;
+  int eventIndex;
 }
 
 class NullEvent implements BaseEvent {

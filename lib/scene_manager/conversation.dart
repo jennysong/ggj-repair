@@ -1,9 +1,20 @@
 import 'message.dart';
 
 class Conversation {
-  Conversation({ this.charactorId, this.emotion, this.messages });
+  Conversation({
+    this.charactorId,
+    this.emotion,
+    messages
+  }) {
+    this.messages = messages.map<Message>((attrs) =>
+      new Message(
+        text: attrs['text'],
+        conditions: attrs['conditions'].cast<String>(),
+      )
+    ).toList();
+  }
   
-  final String charactorId;
-  final String emotion;
-  final List<Message> messages;
+  String charactorId;
+  String emotion;
+  List<Message> messages;
 }
