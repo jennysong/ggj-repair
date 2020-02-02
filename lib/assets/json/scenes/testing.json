@@ -1,0 +1,137 @@
+{
+  "events": [
+    {
+      "type": "Dialog",
+      "backgroundId": null,
+      "backgroundColor": "white",
+      "charactorPositions": [
+        {
+          "charactorId": "player_1",
+          "direction": "right",
+          "position": "left"
+        }
+      ],
+      "conversations": [
+        {
+          "charactorId": "player_1",
+          "emotion": "normal",
+          "messages": [
+            {
+              "text": "Hello.",
+              "conditions": []
+            },
+            {
+              "text": "World.",
+              "conditions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Monolog",
+      "backgroundId": null,
+      "backgroundColor": "black",
+      "messages": [
+        {
+          "text": "Hello",
+          "conditions": []
+        },
+        {
+          "text": "World",
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "type": "GetItem",
+      "visible": true,
+      "purchased": false,
+      "itemId": "spoon"
+    },
+    {
+      "type": "GetItem",
+      "visible": true,
+      "purchased": true,
+      "itemId": "spoon"
+    },
+    {
+      "type": "IncreaseHealth",
+      "visible": true,
+      "amount": 1
+    },
+    {
+      "type": "IncreaseCurrency",
+      "visible": true,
+      "currencyId": "dollar",
+      "amount": 1
+    },
+    {
+      "type": "IncreaseHealth",
+      "visible": false,
+      "amount": 2
+    },
+    {
+      "type": "IncreaseCurrency",
+      "visible": false,
+      "currencyId": "dollar",
+      "amount": 2
+    },
+    {
+      "type": "DecreaseHealth",
+      "visible": true,
+      "amount": 1
+    },
+    {
+      "type": "DecreaseCurrency",
+      "visible": true,
+      "currencyId": "dollar",
+      "amount": 1
+    },
+    {
+      "type": "DecreaseHealth",
+      "visible": false,
+      "amount": 1
+    },
+    {
+      "type": "DecreaseCurrency",
+      "visible": false,
+      "currencyId": "dollar",
+      "amount": 1
+    },
+    {
+      "type": "SingleSelect",
+      "choices": [
+        {
+          "name": "Buy Health $1",
+          "events": [
+            {
+              "type": "IncreaseHealth",
+              "visible": true,
+              "amount": 1
+            },
+            {
+              "type": "DecreaseCurrency",
+              "visible": false,
+              "currencyId": "dollar",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "name": "Do nothing",
+          "events": [
+            {
+              "type": "Null"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Navigate",
+      "sceneId": null,
+      "eventIndex": 0
+    }
+  ]
+}
