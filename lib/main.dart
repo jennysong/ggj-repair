@@ -1,33 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:ggj_repair/models/scene_model.dart';
 import 'package:provider/provider.dart';
-import 'package:ggj_repair/app.dart';
+import 'package:ggj_repair/game_page.dart';
 import 'package:ggj_repair/title_page.dart';
-import 'package:ggj_repair/models/tap_model.dart';
 import 'package:ggj_repair/models/game_model.dart';
 import 'package:ggj_repair/models/character_model.dart';
 
 void main() {
-  runApp(TitlePage());
-	// runApp(
-  //   MultiProvider(
-  //     providers: [
-  //       ChangeNotifierProvider(
-  //         create: (context) {
-  //           var gameModel = GameModel();
-  //           gameModel.setScene('testing');
-  //           return gameModel;
-  //         }
-  //       ),
-  //       ChangeNotifierProvider(
-  //         create: (context) => CharacterModel()
-  //       ),
-  //       ChangeNotifierProvider(
-  //         create: (context) => TapModel()
-  //       )
-  //     ],
-  //     child: MyApp(title: 'GGJ_REPAIR')
-  //   )
-	// );
+	runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => GameModel()
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CharacterModel()
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SceneModel()
+        )
+      ],
+      child: MyApp(title: 'GGJ_REPAIR')
+    )
+	);
 }
 
+class MyApp extends StatelessWidget {
+	final String title;
+	MyApp({Key key, this.title}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/titlePage',
+      routes: {
+        '/titlePage': (BuildContext context) => TitlePage(),
+        '/gamePage': (BuildContext context) => GamePage(),
+      }
+    );
+  }
+}

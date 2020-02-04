@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/tap_model.dart';
+import 'package:ggj_repair/models/scene_model.dart';
 import 'package:provider/provider.dart';
 
 class InterfaceContainer extends StatefulWidget {
@@ -17,7 +17,7 @@ class InterfaceContainerState extends State<InterfaceContainer> {
         Expanded(
           child: GestureDetector(
             onTap: () {
-              Provider.of<TapModel>(context).pageTapped();
+              Provider.of<SceneModel>(context, listen: false).next();
             },
           )
         ),
@@ -76,7 +76,7 @@ bottomTabContainer(String boxType) => Container(
   decoration: new BoxDecoration(
     color: boxType == 'itemBox'? Color.fromRGBO(63, 152, 172, 1) : Color.fromRGBO(169, 134, 95, 1),
     image: DecorationImage(
-      image: boxType == 'itemBox'? AssetImage('lib/assets/Bag.png') : AssetImage('lib/assets/House.png'),
+      image: boxType == 'itemBox'? AssetImage('lib/assets/icons/bag.png') : AssetImage('lib/assets/icons/house.png'),
       fit: BoxFit.contain
     ),
     boxShadow: [

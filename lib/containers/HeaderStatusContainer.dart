@@ -13,21 +13,21 @@ class HeaderStatusContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        imageAsset('lib/assets/heart.png'),
+        imageAsset('lib/assets/icons/heart.png'),
         new Consumer<CharacterModel>(
           builder: (context, character, child) {
             return Text(character.health.toString());
           }
         ),
         Container(width:30),
-        imageAsset('lib/assets/coins.png'),
+        imageAsset('lib/assets/icons/coin.png'),
         new Consumer<CharacterModel>(
           builder: (context, character, child) {
             return Text(character.money.toString());
           }
         ),
         Container(width:30),
-        imageAsset('lib/assets/warning.png'),
+        imageAsset('lib/assets/icons/caution.png'),
         new Consumer<CharacterModel>(
           builder: (context, character, child) {
             return Text(character.suspicion.toString());

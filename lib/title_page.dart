@@ -48,18 +48,23 @@ class TitleContainerState extends State<TitleContainer> {
         ),
         Positioned(
           top: 600,
-          child: AnimatedDefaultTextStyle(
-            style: openEye
-              ? TextStyle(
-                color: Colors.black.withOpacity(0))
-              : TextStyle(
-                color: Colors.white.withOpacity(1)),
-            duration: openEye
-              ? Duration(milliseconds: 0)
-              : Duration(milliseconds: 1000),
-            child: Text(
-              'START',
-              textDirection: TextDirection.ltr
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/gamePage');
+            },
+            child: AnimatedDefaultTextStyle(
+              style: openEye
+                ? TextStyle(
+                  color: Colors.black.withOpacity(0))
+                : TextStyle(
+                  color: Colors.white.withOpacity(1)),
+              duration: openEye
+                ? Duration(milliseconds: 0)
+                : Duration(milliseconds: 1000),
+              child: Text(
+                'START',
+                textDirection: TextDirection.ltr
+              )
             )
           )
         )

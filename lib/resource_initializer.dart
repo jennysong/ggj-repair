@@ -5,7 +5,7 @@ import 'scene_manager/scene.dart';
 
 class SceneInitializer {
   static Future<Scene> loadScene(fileName) async {
-    String jsonString = await loadAsset('lib/assets/json/scenes/$fileName.json');
+    String jsonString = await loadAsset('lib/assets/json/$fileName.json');
     Map parsedJson = json.decode(jsonString);
     return Scene.fromJson(parsedJson);
   }

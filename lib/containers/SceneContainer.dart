@@ -15,12 +15,17 @@ class SceneContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => SceneModel(scene: scene),
+    return Consumer<SceneModel>(
+      builder: (context, sceneModel, child) {
+        return ChangeNotifierProvider.value(
+          value: sceneModel.currentEventModel,
+          child: child
+        );
+      },
       child: Stack(children: <Widget> [
         BackgroundContainer(),
         PictureContainer(),
-        // CharacterContainer(),
+        CharacterContainer(),
         WritingContainer(),
         MonologueContainer(),
       ])
