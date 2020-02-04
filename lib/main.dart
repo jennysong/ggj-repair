@@ -3,6 +3,7 @@ import 'package:ggj_repair/models/scene_model.dart';
 import 'package:provider/provider.dart';
 import 'package:ggj_repair/game_page.dart';
 import 'package:ggj_repair/title_page.dart';
+import 'package:ggj_repair/about_page.dart';
 import 'package:ggj_repair/models/game_model.dart';
 import 'package:ggj_repair/models/character_model.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/titlePage': (BuildContext context) => TitlePage(),
         '/gamePage': (BuildContext context) => GamePage(),
+        '/aboutPage': (BuildContext context) => AboutPage()
       }
     );
   }
