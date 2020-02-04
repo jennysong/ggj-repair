@@ -4,7 +4,6 @@ import 'package:ggj_repair/containers/PictureContainer.dart';
 import 'package:ggj_repair/containers/CharacterContainer.dart';
 import 'package:ggj_repair/containers/MonologueContainer.dart';
 import 'package:ggj_repair/containers/WritingContainer.dart';
-import 'package:ggj_repair/models/event_model.dart';
 import 'package:ggj_repair/models/scene_model.dart';
 import 'package:ggj_repair/scene_manager/scene.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +25,7 @@ class SceneContainer extends StatelessWidget {
       child: Stack(children: <Widget> [
         BackgroundContainer(),
         PictureContainer(),
-        // CharacterContainer(),
+        CharacterContainer(),
         WritingContainer(),
         MonologueContainer(),
       ])

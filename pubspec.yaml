@@ -48,12 +48,21 @@ flutter:
    - lib/assets/backgrounds/Forest_Scene2.jpg
    - lib/assets/backgrounds/Forest_Scene3.jpg
    - lib/assets/backgrounds/Map.jpg
-   - lib/assets/House.png
-   - lib/assets/Bag.png
-   - lib/assets/heart.png
-   - lib/assets/warning.png
-   - lib/assets/coins.png
+   - lib/assets/icons/bag.png
+   - lib/assets/icons/caution.png
+   - lib/assets/icons/coin.png
+   - lib/assets/icons/heart.png
+   - lib/assets/icons/house.png
    - lib/assets/json/scenes/testing.json
+   - lib/assets/characters/ex-gf-normal.png
+   - lib/assets/characters/newbody-hanging.png
+   - lib/assets/characters/newbody-operation.png
+   - lib/assets/characters/random-girl-1-crying.png
+   - lib/assets/characters/random-girl-1-normal.png
+   - lib/assets/characters/random-girl-2-normal.png
+   - lib/assets/characters/random-girl-3-normal.png
+   - lib/assets/characters/random-girl-4-normal.png
+   - lib/assets/characters/random-girl-5-normal.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

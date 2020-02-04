@@ -76,7 +76,7 @@ bottomTabContainer(String boxType) => Container(
   decoration: new BoxDecoration(
     color: boxType == 'itemBox'? Color.fromRGBO(63, 152, 172, 1) : Color.fromRGBO(169, 134, 95, 1),
     image: DecorationImage(
-      image: boxType == 'itemBox'? AssetImage('lib/assets/Bag.png') : AssetImage('lib/assets/House.png'),
+      image: boxType == 'itemBox'? AssetImage('lib/assets/icons/bag.png') : AssetImage('lib/assets/icons/house.png'),
       fit: BoxFit.contain
     ),
     boxShadow: [

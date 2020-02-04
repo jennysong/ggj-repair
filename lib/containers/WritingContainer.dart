@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ggj_repair/models/scene_model.dart';
+import 'package:ggj_repair/scene_manager/event.dart';
 import 'package:provider/provider.dart';
 
 class WritingContainer extends StatefulWidget {
@@ -9,8 +10,19 @@ class WritingContainer extends StatefulWidget {
 class WritingContainerState extends State<WritingContainer> {
   @override
 	Widget build(BuildContext context) {
+    return Consumer<SceneModel>(
+      builder: (context, sceneModel, child) {
+        var event = sceneModel.currentEvent;
+        if (event.runtimeType == DialogEvent) {
+          return buildWrittingWidget(context);
+        } else return Container();
+      });
+  }
+  
+  Widget buildWrittingWidget(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+
     return Consumer<SceneModel>(
       builder: (context, scene, child) {
         return child;

@@ -1,0 +1,58 @@
+{
+  "chacracters": [
+    {
+      "id": "player",
+      "name": "Shawn Jung",
+      "emotions": [
+        "normal"
+      ]
+    },
+    {
+      "id": "ex-gf",
+      "name": "Dahlia",
+      "emotions": [
+        "normal"
+      ]
+    },
+    {
+      "id": "random-girl-1",
+      "name": "Meaghan",
+      "emotions": [
+        "normal",
+        "crying"
+      ]
+    },
+    {
+      "id": "random-girl-2",
+      "name": "Dior",
+      "emotions": [
+        "normal",
+        "crying"
+      ]
+    },
+    {
+      "id": "random-girl-3",
+      "name": "Adalee",
+      "emotions": [
+        "normal",
+        "crying"
+      ]
+    },
+    {
+      "id": "random-girl-4",
+      "name": "Palmer",
+      "emotions": [
+        "normal",
+        "crying"
+      ]
+    },
+    {
+      "id": "random-girl-5",
+      "name": "Oaklynn",
+      "emotions": [
+        "normal",
+        "crying"
+      ]
+    }
+  ]
+}
