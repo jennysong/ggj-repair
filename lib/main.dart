@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/scene_model.dart';
+import 'package:ggj_repair/provider_models/scene_model.dart';
 import 'package:provider/provider.dart';
 import 'package:ggj_repair/game_page.dart';
 import 'package:ggj_repair/title_page.dart';
 import 'package:ggj_repair/about_page.dart';
-import 'package:ggj_repair/models/game_model.dart';
-import 'package:ggj_repair/models/player_model.dart';
+import 'package:ggj_repair/provider_models/game_model.dart';
+import 'package:ggj_repair/provider_models/player_model.dart';
 
 void main() {
 	runApp(

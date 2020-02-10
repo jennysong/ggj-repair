@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:ggj_repair/scene_manager/event.dart';
+import 'package:ggj_repair/models/event.dart';
 
 class EventModel extends ChangeNotifier {
   EventModel({ this.event });

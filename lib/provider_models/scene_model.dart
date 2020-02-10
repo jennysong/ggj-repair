@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:ggj_repair/models/event_model.dart';
-import 'package:ggj_repair/scene_manager/scene.dart';
+import 'package:ggj_repair/provider_models/event_model.dart';
+import 'package:ggj_repair/models/scene.dart';
 
 class SceneModel extends ChangeNotifier {
   Scene currentScene;

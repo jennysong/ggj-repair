@@ -7,7 +7,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ggj_repair/resource_initializer.dart';
-import 'package:ggj_repair/scene_manager/scene.dart';
+import 'package:ggj_repair/models/scene.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

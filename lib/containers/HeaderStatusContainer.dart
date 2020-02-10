@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/player_model.dart';
+import 'package:ggj_repair/provider_models/player_model.dart';
 import 'package:provider/provider.dart';
 
 class HeaderStatusContainer extends StatelessWidget {

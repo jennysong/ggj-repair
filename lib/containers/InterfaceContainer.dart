@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/scene_model.dart';
+import 'package:ggj_repair/provider_models/scene_model.dart';
 import 'package:provider/provider.dart';
 
 class InterfaceContainer extends StatefulWidget {

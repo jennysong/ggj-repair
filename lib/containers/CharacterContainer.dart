@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/scene_model.dart';
-import 'package:ggj_repair/scene_manager/event.dart';
+import 'package:ggj_repair/provider_models/scene_model.dart';
+import 'package:ggj_repair/models/event.dart';
 import 'package:provider/provider.dart';
 
 class CharacterContainer extends StatefulWidget {
