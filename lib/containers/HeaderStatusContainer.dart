@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ggj_repair/models/character_model.dart';
+import 'package:ggj_repair/models/player_model.dart';
 import 'package:provider/provider.dart';
 
 class HeaderStatusContainer extends StatelessWidget {
@@ -14,21 +14,21 @@ class HeaderStatusContainer extends StatelessWidget {
     return Row(
       children: <Widget>[
         imageAsset('lib/assets/icons/heart.png'),
-        new Consumer<CharacterModel>(
+        new Consumer<PlayerModel>(
           builder: (context, character, child) {
             return Text(character.health.toString());
           }
         ),
         Container(width:30),
         imageAsset('lib/assets/icons/coin.png'),
-        new Consumer<CharacterModel>(
+        new Consumer<PlayerModel>(
           builder: (context, character, child) {
             return Text(character.money.toString());
           }
         ),
         Container(width:30),
         imageAsset('lib/assets/icons/caution.png'),
-        new Consumer<CharacterModel>(
+        new Consumer<PlayerModel>(
           builder: (context, character, child) {
             return Text(character.suspicion.toString());
           }

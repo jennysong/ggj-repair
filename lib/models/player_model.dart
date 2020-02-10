@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class CharacterModel extends ChangeNotifier {
+class PlayerModel extends ChangeNotifier {
   int health = 100;
   int suspicion = 0;
   int money = 500;

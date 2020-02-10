@@ -1,29 +1,6 @@
 {
   "events": [
     {
-      "type": "Monolog",
-      "backgroundId": null,
-      "backgroundColor": "black",
-      "messages": [
-        {
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lectus elit.",
-          "conditions": []
-        },
-        {
-          "text": "Ut viverra nibh ex, fringilla tristique justo cursus posuere. Nullam suscipit accumsan varius. Curabitur vitae dictum nisl.",
-          "conditions": []
-        },
-        {
-          "text": "In elementum mauris lorem, consequat consequat augue consectetur dictum. Donec in consequat libero. Aliquam pellentesque ligula erat, vitae rhoncus ante ultricies et. Nulla at mattis ante. Morbi feugiat bibendum maximus. Cras luctus tortor sed maximus ultrices.",
-          "conditions": []
-        },
-        {
-          "text": "Nullam auctor mi a tempor tristique...",
-          "conditions": []
-        }
-      ]
-    },
-    {
       "type": "Dialog",
       "backgroundId": null,
       "backgroundColor": "white",
@@ -48,6 +25,29 @@
               "conditions": []
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "Monolog",
+      "backgroundId": null,
+      "backgroundColor": "black",
+      "messages": [
+        {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lectus elit.",
+          "conditions": []
+        },
+        {
+          "text": "Ut viverra nibh ex, fringilla tristique justo cursus posuere. Nullam suscipit accumsan varius. Curabitur vitae dictum nisl.",
+          "conditions": []
+        },
+        {
+          "text": "In elementum mauris lorem, consequat consequat augue consectetur dictum. Donec in consequat libero. Aliquam pellentesque ligula erat, vitae rhoncus ante ultricies et. Nulla at mattis ante. Morbi feugiat bibendum maximus. Cras luctus tortor sed maximus ultrices.",
+          "conditions": []
+        },
+        {
+          "text": "Nullam auctor mi a tempor tristique...",
+          "conditions": []
         }
       ]
     },

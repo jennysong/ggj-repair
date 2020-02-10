@@ -5,7 +5,7 @@ import 'package:ggj_repair/game_page.dart';
 import 'package:ggj_repair/title_page.dart';
 import 'package:ggj_repair/about_page.dart';
 import 'package:ggj_repair/models/game_model.dart';
-import 'package:ggj_repair/models/character_model.dart';
+import 'package:ggj_repair/models/player_model.dart';
 
 void main() {
 	runApp(
@@ -15,7 +15,7 @@ void main() {
           create: (context) => GameModel()
         ),
         ChangeNotifierProvider(
-          create: (context) => CharacterModel()
+          create: (context) => PlayerModel()
         ),
         ChangeNotifierProvider(
           create: (context) => SceneModel()
