@@ -4,16 +4,12 @@ import 'package:provider/provider.dart';
 import 'package:ggj_repair/game_page.dart';
 import 'package:ggj_repair/title_page.dart';
 import 'package:ggj_repair/about_page.dart';
-import 'package:ggj_repair/provider_models/game_model.dart';
 import 'package:ggj_repair/provider_models/player_model.dart';
 
 void main() {
 	runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => GameModel()
-        ),
         ChangeNotifierProvider(
           create: (context) => PlayerModel()
         ),
@@ -33,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/titlePage',
+      initialRoute: '/gamePage',
       routes: {
         '/titlePage': (BuildContext context) => TitlePage(),
         '/gamePage': (BuildContext context) => GamePage(),

@@ -17,6 +17,7 @@ class Scene {
             conversations: eventAttrs['conversations']
           );
         }
+        break;
         case 'Monolog': {
           return new MonologEvent(
             backgroundId: eventAttrs['backgroundId'],

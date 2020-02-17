@@ -10,14 +10,11 @@ abstract class BaseEvent {}
 
 class DialogEvent implements BaseEvent {
   DialogEvent({
+    this.backgroundColor,
     @required this.backgroundId,
-    @required backgroundColor,
     @required charactorPositions,
     @required conversations
   }) {
-
-    this.backgroundColor = Colors.black;
-
     this.charactorPositions = charactorPositions.map<CharactorPosition>((attrs) =>
       new CharactorPosition(
         charactorId: attrs['charactor_id'],
@@ -36,7 +33,7 @@ class DialogEvent implements BaseEvent {
   }
 
   String backgroundId;
-  Color backgroundColor;
+  String backgroundColor;
   List<CharactorPosition> charactorPositions;
   List<Conversation> conversations;
 }
@@ -44,10 +41,9 @@ class DialogEvent implements BaseEvent {
 class MonologEvent implements BaseEvent {
   MonologEvent({
     this.backgroundId,
-    backgroundColor,
+    this.backgroundColor,
     @required messages
   }) {
-    this.backgroundColor = Colors.black;
     this.messages = messages.map<Message>((attrs) =>
       new Message(
         text: attrs['text'],
@@ -57,7 +53,7 @@ class MonologEvent implements BaseEvent {
   }
   
   String backgroundId;
-  Color backgroundColor;
+  String backgroundColor;
   List<Message> messages;
 }
 

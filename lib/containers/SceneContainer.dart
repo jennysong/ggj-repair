@@ -4,30 +4,17 @@ import 'package:ggj_repair/containers/PictureContainer.dart';
 import 'package:ggj_repair/containers/CharacterContainer.dart';
 import 'package:ggj_repair/containers/MonologueContainer.dart';
 import 'package:ggj_repair/containers/WritingContainer.dart';
-import 'package:ggj_repair/provider_models/scene_model.dart';
-import 'package:ggj_repair/models/scene.dart';
-import 'package:provider/provider.dart';
 
 class SceneContainer extends StatelessWidget {
-  SceneContainer({ this.scene });
-  
-  final Scene scene;
-
   @override
   Widget build(BuildContext context) {
-    return Consumer<SceneModel>(
-      builder: (context, sceneModel, child) {
-        return ChangeNotifierProvider.value(
-          value: sceneModel.currentEventModel,
-          child: child
-        );
-      },
+    return Container(
       child: Stack(children: <Widget> [
         BackgroundContainer(),
         PictureContainer(),
         CharacterContainer(),
         WritingContainer(),
-        MonologueContainer(),
+        MonologueContainer()
       ])
     );
   }

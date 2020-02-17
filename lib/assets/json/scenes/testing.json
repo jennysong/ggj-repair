@@ -1,9 +1,33 @@
 {
+  "id": "testing",
   "events": [
     {
+      "type": "Monolog",
+      "backgroundId": "none",
+      "backgroundColor": "none",
+      "messages": [
+        {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lectus elit.",
+          "conditions": []
+        },
+        {
+          "text": "Ut viverra nibh ex, fringilla tristique justo cursus posuere. Nullam suscipit accumsan varius. Curabitur vitae dictum nisl.",
+          "conditions": []
+        },
+        {
+          "text": "In elementum mauris lorem, consequat consequat augue consectetur dictum. Donec in consequat libero. Aliquam pellentesque ligula erat, vitae rhoncus ante ultricies et. Nulla at mattis ante. Morbi feugiat bibendum maximus. Cras luctus tortor sed maximus ultrices.",
+          "conditions": []
+        },
+        {
+          "text": "Nullam auctor mi a tempor tristique...",
+          "conditions": []
+        }
+      ]
+    },
+    {
       "type": "Dialog",
-      "backgroundId": null,
-      "backgroundColor": "white",
+      "backgroundId": "Forest_Scene1.jpg",
+      "backgroundColor": "none",
       "charactorPositions": [
         {
           "charactorId": "player_1",
@@ -17,11 +41,17 @@
           "emotion": "normal",
           "messages": [
             {
-              "text": "Hello.",
+              "text": "Hello Jenny",
               "conditions": []
-            },
+            }
+          ]
+        },
+        {
+          "charactorId": "player_2",
+          "emotion": "normal",
+          "messages": [
             {
-              "text": "World.",
+              "text": "Hi Shawn",
               "conditions": []
             }
           ]
@@ -30,8 +60,8 @@
     },
     {
       "type": "Monolog",
-      "backgroundId": null,
-      "backgroundColor": "black",
+      "backgroundId": "none",
+      "backgroundColor": "white",
       "messages": [
         {
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lectus elit.",
