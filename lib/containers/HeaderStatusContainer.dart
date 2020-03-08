@@ -11,29 +11,21 @@ class HeaderStatusContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        imageAsset('lib/assets/icons/heart.png'),
-        new Consumer<PlayerModel>(
-          builder: (context, character, child) {
-            return Text(character.health.toString());
-          }
-        ),
-        Container(width:30),
-        imageAsset('lib/assets/icons/coin.png'),
-        new Consumer<PlayerModel>(
-          builder: (context, character, child) {
-            return Text(character.money.toString());
-          }
-        ),
-        Container(width:30),
-        imageAsset('lib/assets/icons/caution.png'),
-        new Consumer<PlayerModel>(
-          builder: (context, character, child) {
-            return Text(character.suspicion.toString());
-          }
-        )
-      ]
+    return Consumer<PlayerModel>(
+      builder: (context, playerModel, child) {
+        return Row(
+          children: <Widget>[
+            imageAsset('lib/assets/icons/heart.png'),
+            Text(playerModel.health.toString()),
+            Container(width:30),
+            imageAsset('lib/assets/icons/coin.png'),
+            Text(playerModel.money.toString()),
+            Container(width:30),
+            imageAsset('lib/assets/icons/caution.png'),
+            Text(playerModel.suspicion.toString())
+          ]
+        );
+      }
     );
   } 
 }

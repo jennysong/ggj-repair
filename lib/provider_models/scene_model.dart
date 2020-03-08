@@ -9,16 +9,15 @@ class SceneModel extends ChangeNotifier {
   Scene currentScene;
   int _currentEventIndex;
   int eventProgress = 0;
-  dynamic currentEvent;
 
-  Color backgroundColor;
-  String backgroundId;
+  Color _backgroundColor;
+  String _backgroundId;
 
   Future<void> loadScene(String sceneId) async {
     currentSceneId = sceneId;
     dynamic json = await JsonLoader.load('scenes/$sceneId');
     currentScene = Scene.fromJson(json);
-    setCurrentEvent(0);
+    setCurrentEventIndex(0);
     notifyListeners();
   }
 
@@ -26,43 +25,33 @@ class SceneModel extends ChangeNotifier {
     if(currentEvent != null && isNextActionAvailable()) {
       eventProgress++;
       notifyListeners();
-    } else if(isNextEventAvailable()) {
-      setCurrentEvent(_currentEventIndex + 1);
+    } else if(isNextEventAvailable) {
+      setCurrentEventIndex(_currentEventIndex + 1);
       notifyListeners();
     }
   }
 
-  void setCurrentEvent(int index) {
+  void setCurrentEventIndex(int index) {
     print('event $index');
     _currentEventIndex = index;
-    currentEvent = currentScene.events[_currentEventIndex];
-    setBackground(currentEvent);
     eventProgress = 0;
   }
 
+  dynamic get currentEvent => currentScene.events[_currentEventIndex];
+  dynamic get backgroundColor =>
+    isBackgroundColorChangeable ?
+      _backgroundColor = _colorPicker(currentEvent.backgroundColor) :
+      _backgroundColor;
 
-  void setBackground(dynamic currentEvent) {
-    if (!isEventWithBackgroundItems()) {
-      return;
-    }
-    if (currentEvent.backgroundColor != null) {
-      backgroundColor = colorPicker(currentEvent.backgroundColor);
-    }
-    if (currentEvent.backgroundId != null) {
-      backgroundId = currentEvent.backgroundId;
-    }
-  }
+  dynamic get backgroundId =>
+    isBackgroundIdChangeable ?
+      _backgroundId = currentEvent.backgroundId :
+      _backgroundId;
 
-  bool isEventWithBackgroundItems() {
-    if (currentEvent.runtimeType == DialogEvent || currentEvent.runtimeType == MonologEvent) {
-      return true;
-    }
-    return false;
-  }
-
-  bool isNextEventAvailable() {
-    return currentScene.events.length > _currentEventIndex + 1;
-  }
+  bool get isBackgroundColorChangeable => _backgroundColor == null || (isEventWithBackgroundItems && currentEvent.backgroundColor != null);
+  bool get isBackgroundIdChangeable => _backgroundId == null || (isEventWithBackgroundItems && currentEvent.backgroundId != null);
+  bool get isEventWithBackgroundItems => currentEvent.runtimeType == DialogEvent || currentEvent.runtimeType == MonologEvent;
+  bool get isNextEventAvailable => currentScene.events.length > _currentEventIndex + 1;
 
   bool isNextActionAvailable() {
     switch(currentEvent.runtimeType) {
@@ -81,7 +70,7 @@ class SceneModel extends ChangeNotifier {
   }
 }
 
-colorPicker(backgroundColor) {
+Color _colorPicker(backgroundColor) {
   switch(backgroundColor) {
     case 'empty': {
       return null;
