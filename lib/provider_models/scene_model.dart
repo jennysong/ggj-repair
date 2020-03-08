@@ -48,8 +48,8 @@ class SceneModel extends ChangeNotifier {
       _backgroundId = currentEvent.backgroundId :
       _backgroundId;
 
-  bool get isBackgroundColorChangeable => _backgroundColor == null || (isEventWithBackgroundItems && currentEvent.backgroundColor != null);
-  bool get isBackgroundIdChangeable => _backgroundId == null || (isEventWithBackgroundItems && currentEvent.backgroundId != null);
+  bool get isBackgroundColorChangeable => isEventWithBackgroundItems && ( _backgroundColor == null || currentEvent.backgroundColor != null );
+  bool get isBackgroundIdChangeable => isEventWithBackgroundItems && ( _backgroundId == null || currentEvent.backgroundId != null );
   bool get isEventWithBackgroundItems => currentEvent.runtimeType == DialogEvent || currentEvent.runtimeType == MonologEvent;
   bool get isNextEventAvailable => currentScene.events.length > _currentEventIndex + 1;
 

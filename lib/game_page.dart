@@ -9,20 +9,30 @@ class GamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<SceneModel>(context, listen: false).loadScene('testing');
-    return MaterialApp(
-      theme: ThemeData.dark(),
-      darkTheme: ThemeData.dark(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: HeaderStatusContainer()
-        ),
-        body: Stack(
-          children: <Widget>[
-            SceneContainer(),
-            InterfaceContainer(), // container4:interface
-          ]
+    
+    return Consumer<SceneModel>(
+      builder: (context, sceneModel, child) {
+        return AnimatedOpacity(
+          opacity: sceneModel.currentScene == null ? 0 : 1,
+          duration: Duration(milliseconds: 600),
+          child: child
+        );
+      },
+      child: MaterialApp(
+        theme: ThemeData.dark(),
+        darkTheme: ThemeData.dark(),
+        home: Scaffold(
+          appBar: AppBar(
+            title: HeaderStatusContainer()
+          ),
+          body: Stack(
+            children: <Widget>[
+              SceneContainer(),
+              InterfaceContainer(), // container4:interface
+            ]
+          )
         )
-      )
+      ),
     );
   }
 }

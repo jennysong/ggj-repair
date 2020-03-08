@@ -6,7 +6,7 @@ class PictureContainer extends StatelessWidget {
 	Widget build(BuildContext context) {
     return Consumer<SceneModel>(
       builder: (context, sceneModel, child) {
-        if (sceneModel.backgroundId == 'none') {
+        if (sceneModel.backgroundId == null || sceneModel.backgroundId == 'none') {
           return Container();
         }  
         return Container(
