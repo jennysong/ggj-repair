@@ -8,8 +8,7 @@ import 'package:provider/provider.dart';
 class GamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SceneModel sceneModel = Provider.of<SceneModel>(context);
-    sceneModel.loadScene('testing');
+    Provider.of<SceneModel>(context, listen: false).loadScene('testing');
     return MaterialApp(
       theme: ThemeData.dark(),
       darkTheme: ThemeData.dark(),
@@ -19,7 +18,7 @@ class GamePage extends StatelessWidget {
         ),
         body: Stack(
           children: <Widget>[
-            sceneModel.currentScene != null ? SceneContainer() : Container(),
+            SceneContainer(),
             InterfaceContainer(), // container4:interface
           ]
         )

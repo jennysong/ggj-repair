@@ -37,7 +37,7 @@ class SceneModel extends ChangeNotifier {
     eventProgress = 0;
   }
 
-  dynamic get currentEvent => currentScene.events[_currentEventIndex];
+  dynamic get currentEvent => currentScene != null ? currentScene.events[_currentEventIndex] : null;
   dynamic get backgroundColor =>
     isBackgroundColorChangeable ?
       _backgroundColor = _colorPicker(currentEvent.backgroundColor) :
