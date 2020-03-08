@@ -44,12 +44,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+   - lib/assets/backgrounds/background1.jpg
    - lib/assets/backgrounds/eye_open.jpg
    - lib/assets/backgrounds/eye_close.jpg
-   - lib/assets/backgrounds/Forest_Scene1.jpg
-   - lib/assets/backgrounds/Forest_Scene2.jpg
-   - lib/assets/backgrounds/Forest_Scene3.jpg
-   - lib/assets/backgrounds/Map.jpg
+   - lib/assets/backgrounds/forest_scene1.jpg
+   - lib/assets/backgrounds/forest_scene2.jpg
+   - lib/assets/backgrounds/forest_scene3.jpg
+   - lib/assets/backgrounds/map.jpg
+   - lib/assets/backgrounds/surgery_bed.jpg
+   - lib/assets/backgrounds/surgery_room.jpg
+   - lib/assets/backgrounds/village_morning.jpg
+   - lib/assets/backgrounds/village_night.jpg
    - lib/assets/Blink.png
    - lib/assets/Blinkw.png
    - lib/assets/icons/bag.png

@@ -2,12 +2,12 @@ events[]
   type = Dialog
   backgroundId n = n
   backgroundColor = white
-  charactorPositions[]
-    charactorId = player_1
+  characterPositions[]
+    characterId = player_1
     direction = right
     position = left
   conversations[]
-    charactorId = player_1
+    characterId = player_1
     emotion = normal
     messages[]
       text = Hello.

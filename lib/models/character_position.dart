@@ -1,9 +1,9 @@
 
 import 'package:flutter/foundation.dart';
 
-class CharactorPosition {
-  CharactorPosition({
-    @required this.charactorId,
+class CharacterPosition {
+  CharacterPosition({
+    @required this.characterId,
     @required this.direction,
     position,
     this.offsetX,
@@ -22,8 +22,12 @@ class CharactorPosition {
       break;
     }
   }
-  String charactorId;
+  String characterId;
   String direction;
   double offsetX;
   double offsetY;
+
+  String getLink() {
+    return this.characterId;
+  }
 }

@@ -45,13 +45,10 @@ class SceneModel extends ChangeNotifier {
     if (!isEventWithBackgroundItems()) {
       return;
     }
-    print(currentEvent.backgroundColor);
     if (currentEvent.backgroundColor != null) {
       backgroundColor = colorPicker(currentEvent.backgroundColor);
     }
-    print(currentEvent.backgroundId);
     if (currentEvent.backgroundId != null) {
-      print(currentEvent.backgroundId);
       backgroundId = currentEvent.backgroundId;
     }
   }

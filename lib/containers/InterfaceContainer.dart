@@ -55,7 +55,7 @@ class InterfaceContainerState extends State<InterfaceContainer> {
               decoration: BoxDecoration(
                 color: Color.fromRGBO(169, 134, 95, 1),
                 image: DecorationImage(
-                  image: AssetImage('lib/assets/backgrounds/Map.jpg'),
+                  image: AssetImage('lib/assets/backgrounds/map.jpg'),
                   fit: BoxFit.contain
                 )
               ),

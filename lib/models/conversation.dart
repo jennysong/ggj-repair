@@ -2,7 +2,7 @@ import 'message.dart';
 
 class Conversation {
   Conversation({
-    this.charactorId,
+    this.characterId,
     this.emotion,
     messages
   }) {
@@ -14,7 +14,7 @@ class Conversation {
     ).toList();
   }
   
-  String charactorId;
+  String characterId;
   String emotion;
   List<Message> messages;
 }

@@ -13,7 +13,7 @@ class Scene {
           return new DialogEvent(
             backgroundId: eventAttrs['backgroundId'],
             backgroundColor: eventAttrs['backgroundColor'],
-            charactorPositions: eventAttrs['charactorPositions'],
+            characterPositions: eventAttrs['characterPositions'],
             conversations: eventAttrs['conversations']
           );
         }

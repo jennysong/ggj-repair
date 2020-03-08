@@ -26,32 +26,37 @@
     },
     {
       "type": "Dialog",
-      "backgroundId": "Forest_Scene1.jpg",
+      "backgroundId": "forest_scene1.jpg",
       "backgroundColor": "none",
-      "charactorPositions": [
+      "characterPositions": [
         {
-          "charactorId": "player_1",
+          "characterId": "random-girl-1-normal.png",
           "direction": "right",
           "position": "left"
+        },
+        {
+          "characterId": "random-girl-2-normal.png",
+          "direction": "left",
+          "position": "right"
         }
       ],
       "conversations": [
         {
-          "charactorId": "player_1",
+          "characterId": "random-girl-1-normal.png",
           "emotion": "normal",
           "messages": [
             {
-              "text": "Hello Jenny",
+              "text": "Hello A",
               "conditions": []
             }
           ]
         },
         {
-          "charactorId": "player_2",
+          "characterId": "random-girl-2-normal.png",
           "emotion": "normal",
           "messages": [
             {
-              "text": "Hi Shawn",
+              "text": "Hi B",
               "conditions": []
             }
           ]

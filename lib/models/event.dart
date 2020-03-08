@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'charactor_position.dart';
+import 'character_position.dart';
 import 'choice.dart';
 import 'conversation.dart';
 import 'message.dart';
@@ -12,12 +12,12 @@ class DialogEvent implements BaseEvent {
   DialogEvent({
     this.backgroundColor,
     @required this.backgroundId,
-    @required charactorPositions,
+    @required characterPositions,
     @required conversations
   }) {
-    this.charactorPositions = charactorPositions.map<CharactorPosition>((attrs) =>
-      new CharactorPosition(
-        charactorId: attrs['charactor_id'],
+    this.characterPositions = characterPositions.map<CharacterPosition>((attrs) =>
+      new CharacterPosition(
+        characterId: attrs['character_id'],
         direction: attrs['direction'],
         position: attrs['position']
       )
@@ -25,7 +25,7 @@ class DialogEvent implements BaseEvent {
     
     this.conversations = conversations.map<Conversation>((attrs) =>
       new Conversation(
-        charactorId: attrs['charactorId'],
+        characterId: attrs['characterId'],
         emotion: attrs['emotion'],
         messages: attrs['messages'],
       )
@@ -34,7 +34,7 @@ class DialogEvent implements BaseEvent {
 
   String backgroundId;
   String backgroundColor;
-  List<CharactorPosition> charactorPositions;
+  List<CharacterPosition> characterPositions;
   List<Conversation> conversations;
 }
 
